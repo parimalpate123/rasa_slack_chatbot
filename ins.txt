@@ -1,0 +1,50 @@
+download and install python 3.6.4 - https://www.python.org/downloads/release/python-364/
+
+
+install python in C:\Program Files
+
+add environment variables in path - 
+C:\Program Files\Python36\Scripts
+C:\Program Files\Python36
+
+Install Github Desktop at C:\Github\GitHubDesktop
+This is required to clone and maintain a repository for our project.
+pip install -r requirements.txt
+
+Install Microsoft Visual C++ (Build tools) from the following link :
+https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
+Under Tools for Visual Studio 2017 select and download Build Tools for Visual Studio 2017
+Select check box Visual C++ build tools and install
+
+Install make for windows from the following link :
+http://gnuwin32.sourceforge.net/packages/make.htm
+And select Setup program under Download to download file
+Set the path under environment for both user and system (the path should be where you installed gnu make)
+for eg.C:\Program Files (x86)\GnuWin32\bin
+
+Install JDK8 64bit windows from - https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+Set JAVA_HOME path as "C:\Program Files\Java\jdk1.8.0_201" (wherever you installed JAVA)
+
+create directory C:\rasa
+Install rasa core 0.9.8 from 
+pip install rasa_core==0.9.8
+
+pip install rasa_nlu[spacy]
+
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_md en
+
+
+in the command prompt -
+C:\GitHub\rasa_slack_chatbot> 
+pip install -r requirements.txt
+
+To train the chatbot - execute below commands
+
+make train-nlu
+make train-core
+
+To run the chatbot - execute below command
+make cmdline
+
+
