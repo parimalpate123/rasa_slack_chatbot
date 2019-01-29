@@ -1,6 +1,5 @@
 download and install python 3.6.4 - https://www.python.org/downloads/release/python-364/
 
-
 install python in C:\Program Files
 
 add environment variables in path - 
