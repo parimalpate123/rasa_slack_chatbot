@@ -1,0 +1,94 @@
+﻿{
+  "rasa_nlu_data": {
+    "common_examples": [
+	  {
+        "text": "hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hi",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "check service",
+        "intent": "ask_servicename",
+        "entities": []
+      },
+      {
+        "text": "check application",
+        "intent": "ask_servicename",
+        "entities": []
+      },
+      {
+        "text": "check app",
+        "intent": "ask_servicename",
+        "entities": []
+      },
+      {
+        "text": "app health",
+        "intent": "ask_servicename",
+        "entities": []
+      },
+      {
+        "text": "app healthcheck",
+        "intent": "ask_servicename",
+        "entities": []
+      },
+      {
+        "text": "check service google",
+        "intent": "check_service_withservice",
+        "entities": [
+          {
+            "start": 14,
+            "end": 20,
+            "value": "google",
+            "entity": "servicename"
+          }
+        ]
+      },
+	  {
+        "text": "check service yahoo",
+        "intent": "check_service_withservice",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "yahoo",
+            "entity": "servicename"
+          }
+        ]
+      },
+	  {
+        "text": "check service travelers",
+        "intent": "check_service_withservice",
+        "entities": [
+          {
+            "start": 14,
+            "end": 23,
+            "value": "travelers",
+            "entity": "servicename"
+          }
+        ]
+      },
+      {
+        "text": "check service accenture",
+        "intent": "check_service_withservice",
+        "entities": [
+          {
+            "start": 14,
+            "end": 23,
+            "value": "accenture",
+            "entity": "servicename"
+          }
+        ]
+      }
+    ]
+  }
+}
