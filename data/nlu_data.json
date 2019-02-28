@@ -1,4 +1,4 @@
-﻿{
+{
   "rasa_nlu_data": {
     "common_examples": [
 	  {
@@ -14,31 +14,6 @@
       {
         "text": "Hello",
         "intent": "greet",
-        "entities": []
-      },
-      {
-        "text": "check service",
-        "intent": "ask_servicename",
-        "entities": []
-      },
-      {
-        "text": "check application",
-        "intent": "ask_servicename",
-        "entities": []
-      },
-      {
-        "text": "check app",
-        "intent": "ask_servicename",
-        "entities": []
-      },
-      {
-        "text": "app health",
-        "intent": "ask_servicename",
-        "entities": []
-      },
-      {
-        "text": "app healthcheck",
-        "intent": "ask_servicename",
         "entities": []
       },
       {
@@ -88,6 +63,67 @@
             "entity": "servicename"
           }
         ]
+      },
+	  {
+        "text": "check JIRA Status for TS-3",
+        "intent": "check_JIRA_Status",
+        "entities": [
+          {
+            "start": 22,
+            "end": 26,
+            "value": "TS-3",
+            "entity": "JIRAID"
+          }
+        ]
+      },
+      {
+        "text": "check JIRA Status for TS-6",
+        "intent": "check_JIRA_Status",
+        "entities": [
+          {
+            "start": 22,
+            "end": 26,
+            "value": "TS-6",
+            "entity": "JIRAID"
+          }
+        ]
+      },
+      {
+        "text": "check JIRA Status for TS-7",
+        "intent": "check_JIRA_Status",
+        "entities": [
+          {
+            "start": 22,
+            "end": 26,
+            "value": "TS-7",
+            "entity": "JIRAID"
+          }
+        ]
+      },
+	  {
+        "text": "trigger jenkins job",
+        "intent": "trigger_jenkinsjob",
+        "entities": []
+      },
+      {
+        "text": "start jenkins job",
+        "intent": "trigger_jenkinsjob",
+        "entities": []
+      },
+      {
+        "text": "build jenkins job",
+        "intent": "trigger_jenkinsjob",
+        "entities": []
+      },
+	  {
+        "text": "create a new issue",
+        "intent": "create_JIRA_request",
+        "entities": []
+      },
+	  {
+        "text": "creation of an issue",
+        "intent": "create_JIRA_request",
+        "entities": []
       }
     ]
   }
