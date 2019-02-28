@@ -10,14 +10,11 @@
 * bye
     - utter_bye
 
-## ask_jenkinsjob
-	- utter_ask_jenkinsjob
-
 ## trigger_jenkinsjob
+* greet
+    - utter_greet
 * trigger_jenkinsjob
-	- utter_ask_jenkinsjob
-* anythingelse
-    - utter_anythingelse
+    - action_jenkins
 
 ## trigger_jenkinsjob_withjob
 * trigger_jenkinsjob_withjob{"jenkinsjob": "sampleapp_ppl"}
@@ -37,13 +34,15 @@
     - action_jenkins_param
 * anythingelse
     - utter_anythingelse
-
-## check_service
-* check_service
-	- utter_ask_service
-* anythingelse
-    - utter_anythingelse
+		
+## check_status_withID1
+* check_JIRA_Status{"JIRAID": "TS-3"}
+    - action_GetJIRAStatus_param
 	
+## check_jira_request1
+* create_JIRA_request
+    - action_createJIRArequest_param
+		
 ## check_service_withservice1
 * check_service_withservice{"servicename": "google"}
     - action_checkservice
