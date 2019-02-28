@@ -16,6 +16,9 @@ intents:
   - check_service
   - check_service_withservice
   - anythingelse
+  - information_jenkinsjob
+  - check_JIRA_Status
+  - create_JIRA_request
 
 entities:
   # replace with your entities
@@ -24,6 +27,7 @@ entities:
   - environment
   - appname
   - servicename
+  - JIRAID
 
 
 slots:
@@ -37,6 +41,8 @@ slots:
   appname:
     type: text  
   servicename:
+    type: text
+  JIRAID:
     type: text
 
 templates:
@@ -61,6 +67,8 @@ templates:
     - "Done!"
   utter_unknown:
     - "Sorry, I dont recognise what you say!" 
+  utter_ask_ID:
+    - "For which ID?"
 
 actions:
   # all the utter actions from the templates, plus any custom actions
@@ -74,9 +82,12 @@ actions:
   - utter_anythingelse
   - utter_done
   - utter_unknown
+  - utter_ask_ID
   - actions.ActionCheckService
   - actions.ActionStartJenkinsBuildWithParams
   - actions.ActionStartJenkinsBuild
+  - actions.ActionGetJIRAStatus
+  - actions.ActionGetJIRACreate
 #  - action_jenkins
 #  - action_jenkins_param
 #  - action_jenkinstrigger
