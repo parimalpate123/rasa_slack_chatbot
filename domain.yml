@@ -6,19 +6,12 @@ intents:
   - deny
   - affirm
   - trigger_jenkinsjob
-  - trigger_jenkinsjob_withjob
   - trigger_deploy
-  - trigger_deploy_withapp
-  - ask_jenkinsjob
-  - ask_environment
-  - ask_appname
-  - ask_servicename
   - check_service
-  - check_service_withservice
-  - anythingelse
-  - information_jenkinsjob
   - check_JIRA_Status
   - create_JIRA_request
+  - request_restaurant
+  - inform
 
 entities:
   # replace with your entities
@@ -28,6 +21,11 @@ entities:
   - appname
   - servicename
   - JIRAID
+  - cuisine
+  - people
+  - vegetarian
+  - summary
+  - description
 
 
 slots:
@@ -44,6 +42,18 @@ slots:
     type: text
   JIRAID:
     type: text
+  cuisine:
+    type: text
+  people:
+    type: text
+  vegetarian:
+    type: text
+  requested_slot:
+    type: unfeaturized
+  summary:
+    type: text
+  description:
+    type: text
 
 templates:
   # templates the bot should respond with
@@ -55,11 +65,11 @@ templates:
     - "Goodbye"
   utter_ask_jenkinsjob:
     - "For which jenkins job?"
+  utter_ask_appname:
+    - "For which appname?"
   utter_ask_environment:
     - "For which environment?"
-  utter_ask_appname:
-    - "For which application?"
-  utter_ask_service:
+  utter_ask_servicename:
     - "For which application or service?"
   utter_anythingelse:
     - "Is there anything else I can help you with?"
@@ -69,6 +79,18 @@ templates:
     - "Sorry, I dont recognise what you say!" 
   utter_ask_ID:
     - "For which ID?"
+  utter_ask_cuisine:
+    - "For which cuisine?"
+  utter_ask_people:
+    - "For how many people?"
+  utter_ask_vegetarian:
+    - "Only Veg? (yes/no)"
+  utter_ask_summary:
+    - "Please mention the summary of the issue :-"
+  utter_ask_description:
+    - "Kindly provide description of the issue :-"
+  utter_ask_JIRAID:
+    - "What's the JIRA_ID ?"
 
 actions:
   # all the utter actions from the templates, plus any custom actions
@@ -78,7 +100,7 @@ actions:
   - utter_ask_jenkinsjob
   - utter_ask_environment
   - utter_ask_appname
-  - utter_ask_service
+  - utter_ask_servicename
   - utter_anythingelse
   - utter_done
   - utter_unknown
@@ -88,6 +110,7 @@ actions:
   - actions.ActionStartJenkinsBuild
   - actions.ActionGetJIRAStatus
   - actions.ActionGetJIRACreate
+  - actions.ActionSearchRestaurants
 #  - action_jenkins
 #  - action_jenkins_param
 #  - action_jenkinstrigger
