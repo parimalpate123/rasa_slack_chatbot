@@ -119,6 +119,46 @@
 ## trigger deploy
 * trigger_deploy{"appname": "deploytest","environment": "prod"}
 	- action_jenkins_param
+
+
+
+
+
+
+
+
+
+
+
+
+## ASK ACCESS
+* ask_access{"access": "github"}
+	- action_request_access
+	- slot{"access": "github"}
+	
+
+## ASK ACCESS
+* ask_access{"access": "svn"}
+	- action_request_access
+	- slot{"access": "svn"}
+	
+## ASK ACCESS
+* ask_access{"access": "servicedesk"}
+	- action_request_access
+	- slot{"access": "servicedesk"}
+	
+## ASK ACCESS
+* ask_access{"access": "ucd"}
+	- action_request_access
+	- slot{"access": "ucd"}
+
+
+
+
+
+
+
+
 	
 
 
@@ -126,7 +166,10 @@
 
 
 
-	
+
+
+
+
 
 
 
