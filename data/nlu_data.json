@@ -371,6 +371,54 @@
         ]
       },
 	  {
+        "text": "provide me access to github",
+        "intent": "ask_access",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "github",
+            "entity": "access"
+          }
+        ]
+      },
+      {
+        "text": "provide me access to svn",
+        "intent": "ask_access",
+        "entities": [
+          {
+            "start": 21,
+            "end": 24,
+            "value": "svn",
+            "entity": "access"
+          }
+        ]
+      },
+      {
+        "text": "provide me access to ucd",
+        "intent": "ask_access",
+        "entities": [
+          {
+            "start": 21,
+            "end": 24,
+            "value": "ucd",
+            "entity": "access"
+          }
+        ]
+      },
+      {
+        "text": "provide me access to servicedesk",
+        "intent": "ask_access",
+        "entities": [
+          {
+            "start": 21,
+            "end": 32,
+            "value": "servicedesk",
+            "entity": "access"
+          }
+        ]
+      },
+	  {
         "text": "chinese",
         "intent": "inform",
         "entities": [
