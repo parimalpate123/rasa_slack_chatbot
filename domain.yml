@@ -12,6 +12,7 @@ intents:
   - create_JIRA_request
   - request_restaurant
   - inform
+  - ask_access
 
 entities:
   # replace with your entities
@@ -26,6 +27,7 @@ entities:
   - vegetarian
   - summary
   - description
+  - access
 
 
 slots:
@@ -53,6 +55,8 @@ slots:
   summary:
     type: text
   description:
+    type: text
+  access:
     type: text
 
 templates:
@@ -111,6 +115,7 @@ actions:
   - actions.ActionGetJIRAStatus
   - actions.ActionGetJIRACreate
   - actions.ActionSearchRestaurants
+  - actions.ActionRequestAccess
 #  - action_jenkins
 #  - action_jenkins_param
 #  - action_jenkinstrigger
