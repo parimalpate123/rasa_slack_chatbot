@@ -213,4 +213,34 @@ class ActionSearchRestaurants(FormAction):
 		    tracker.get_slot("people"))
 	    return [SlotSet("search_results", results)]
 
+class ActionRequestAccess(Action):
+	def name(self):
+		# you can then use action_example in your stories
+		return "action_request_access"
 
+	def run(self, dispatcher, tracker, domain):
+		# what your action should do
+		job=str(tracker.get_slot('access'))
+		#job = str(tracker.get_slot('jenkinsjob'))
+		try:
+			if job == "ucd":
+				response = 'Sailpoint request has been raised on your behalf, You will be notified in the email once it is approved'
+				dispatcher.utter_message(response)
+			elif job == "github":
+				response = 'Validation completed...You are authorized for access'
+				dispatcher.utter_message(response)
+				response1 = 'Access has been granted, please validate URL : http://github.mycomp.com/'
+				dispatcher.utter_message(response1)
+			elif job == "svn":
+				response = 'Validation completed...You are authorized for access'
+				dispatcher.utter_message(response)
+				response1 = 'Please contact your Manager.'
+				dispatcher.utter_message(response1)
+			elif job == "servicedesk":
+				response = 'Access has been granted, please validate URL : http://myservicedesk.mycomp.com/'
+				dispatcher.utter_message(response)
+			else:
+				dispatcher.utter_message('Access is not automated through DevOps bot for tool:'+ str(job))
+		except:
+			dispatcher.utter_message('Sorry! an exception occured')
+		return []
