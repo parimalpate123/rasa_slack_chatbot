@@ -16,9 +16,19 @@
         "intent": "greet",
         "entities": []
       },
+	  {
+        "text": "check service",
+        "intent": "check_service",
+        "entities": []
+      },
+      {
+        "text": "check for a service",
+        "intent": "check_service",
+        "entities": []
+      },
       {
         "text": "check service google",
-        "intent": "check_service_withservice",
+        "intent": "check_service",
         "entities": [
           {
             "start": 14,
@@ -30,7 +40,7 @@
       },
 	  {
         "text": "check service yahoo",
-        "intent": "check_service_withservice",
+        "intent": "check_service",
         "entities": [
           {
             "start": 14,
@@ -41,8 +51,20 @@
         ]
       },
 	  {
+        "text": "check service cnbc",
+        "intent": "check_service",
+        "entities": [
+          {
+            "start": 14,
+            "end": 18,
+            "value": "yahoo",
+            "entity": "servicename"
+          }
+        ]
+      },
+	  {
         "text": "check service travelers",
-        "intent": "check_service_withservice",
+        "intent": "check_service",
         "entities": [
           {
             "start": 14,
@@ -54,7 +76,7 @@
       },
       {
         "text": "check service accenture",
-        "intent": "check_service_withservice",
+        "intent": "check_service",
         "entities": [
           {
             "start": 14,
@@ -116,6 +138,137 @@
         "entities": []
       },
 	  {
+        "text": "trigger jenkins job for sampleapp_ppl",
+        "intent": "trigger_jenkinsjob",
+        "entities": [
+          {
+            "start": 24,
+            "end": 37,
+            "value": "sampleapp_ppl",
+            "entity": "jenkinsjob"
+          }
+        ]
+      },
+      {
+        "text": "start jenkins for sampleapp_ppl",
+        "intent": "trigger_jenkinsjob",
+        "entities": [
+          {
+            "start": 18,
+            "end": 31,
+            "value": "sampleapp_ppl",
+            "entity": "jenkinsjob"
+          }
+        ]
+      },
+      {
+        "text": "build jenkins job for sampleapp_ppl",
+        "intent": "trigger_jenkinsjob",
+        "entities": [
+          {
+            "start": 22,
+            "end": 35,
+            "value": "sampleapp_ppl",
+            "entity": "jenkinsjob"
+          }
+        ]
+      },
+      {
+        "text": "trigger jenkins for sampleapp_ppl",
+        "intent": "trigger_jenkinsjob",
+        "entities": [
+          {
+            "start": 20,
+            "end": 33,
+            "value": "sampleapp_ppl",
+            "entity": "jenkinsjob"
+          }
+        ]
+      },
+      {
+        "text": "trigger deploy",
+        "intent": "trigger_deploy",
+        "entities": []
+      },
+      {
+        "text": "trigger deploy for deploytest",
+        "intent": "trigger_deploy",
+        "entities": [
+          {
+            "start": 19,
+            "end": 29,
+            "value": "deploytest",
+            "entity": "appname"
+          }
+        ]
+      },
+	  {
+        "text": "trigger deploy deploytest in uat",
+        "intent": "trigger_deploy",
+        "entities": [
+          {
+            "start": 15,
+            "end": 25,
+            "value": "deploytest",
+            "entity": "appname"
+          },
+          {
+            "start": 29,
+            "end": 32,
+            "value": "uat",
+            "entity": "environment"
+          }
+        ]
+      },
+      {
+        "text": "start deploy for deploytest in uat",
+        "intent": "trigger_deploy",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "deploytest",
+            "entity": "appname"
+          },
+          {
+            "start": 31,
+            "end": 34,
+            "value": "uat",
+            "entity": "environment"
+          }
+        ]
+      },
+	  {
+        "text": "start deploy for deploytest in prod",
+        "intent": "trigger_deploy",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "deploytest",
+            "entity": "appname"
+          },
+          {
+            "start": 31,
+            "end": 35,
+            "value": "prod",
+            "entity": "environment"
+          }
+        ]
+      },
+      {
+        "text": "trigger deploy deploytest",
+        "intent": "trigger_deploy",
+        "entities": [
+          {
+            "start": 15,
+            "end": 25,
+            "value": "deploytest",
+            "entity": "appname"
+          }
+        ]
+      },
+	  {
         "text": "create a new issue",
         "intent": "create_JIRA_request",
         "entities": []
@@ -124,6 +277,290 @@
         "text": "creation of an issue",
         "intent": "create_JIRA_request",
         "entities": []
+      },
+	  {
+        "text": "check JIRA status",
+        "intent": "check_JIRA_Status",
+        "entities": []
+      },
+      {
+        "text": "check status JIRA",
+        "intent": "check_JIRA_Status",
+        "entities": []
+      },
+      {
+        "text": "create a new request with description as test and summary as access required",
+        "intent": "create_JIRA_request",
+        "entities": [
+          {
+            "start": 41,
+            "end": 45,
+            "value": "test",
+            "entity": "description"
+          },
+          {
+            "start": 61,
+            "end": 76,
+            "value": "access required",
+            "entity": "summary"
+          }
+        ]
+      },
+      {
+        "text": "create a new request with description test and summary access required",
+        "intent": "create_JIRA_request",
+        "entities": [
+          {
+            "start": 38,
+            "end": 42,
+            "value": "test",
+            "entity": "description"
+          },
+          {
+            "start": 55,
+            "end": 70,
+            "value": "access required",
+            "entity": "summary"
+          }
+        ]
+      },
+      {
+        "text": "create a new request with description test",
+        "intent": "create_JIRA_request",
+        "entities": [
+          {
+            "start": 38,
+            "end": 42,
+            "value": "test",
+            "entity": "description"
+          }
+        ]
+      },
+      {
+        "text": "create a new request with description as test",
+        "intent": "create_JIRA_request",
+        "entities": [
+          {
+            "start": 41,
+            "end": 45,
+            "value": "test",
+            "entity": "description"
+          }
+        ]
+      },
+	  {
+        "text": "search a restaurant",
+        "intent": "request_restaurant",
+        "entities": []
+      },
+      {
+        "text": "choose a restaurant",
+        "intent": "request_restaurant",
+        "entities": []
+      },
+      {
+        "text": "search a chinese restaurant ",
+        "intent": "request_restaurant",
+        "entities": [
+          {
+            "start": 9,
+            "end": 16,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ]
+      },
+	  {
+        "text": "chinese",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "chinese",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "italian",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "italian",
+            "entity": "cuisine"
+          }
+        ]
+      },
+      {
+        "text": "8 people",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "value": "8",
+            "entity": "people"
+          }
+        ]
+      },
+      {
+        "text": "3",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "value": "3",
+            "entity": "people"
+          }
+        ]
+      },
+	  {
+        "text": "deploytest",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "deploytest",
+            "entity": "appname"
+          }
+        ]
+      },
+      {
+        "text": "int",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "int",
+            "entity": "environment"
+          }
+        ]
+      },
+	  {
+        "text": "prod",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "prod",
+            "entity": "environment"
+          }
+        ]
+      },
+      {
+        "text": "uat",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "uat",
+            "entity": "environment"
+          }
+        ]
+      },
+      {
+        "text": "dev",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 3,
+            "value": "dev",
+            "entity": "environment"
+          }
+        ]
+      },
+	  {
+        "text": "TS-3",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "TS-3",
+            "entity": "JIRAID"
+          }
+        ]
+      },
+      {
+        "text": "TS-4",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "TS-4",
+            "entity": "JIRAID"
+          }
+        ]
+      },
+      {
+        "text": "TS-5",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "TS-5",
+            "entity": "JIRAID"
+          }
+        ]
+      },
+      {
+        "text": "summary",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "summary",
+            "entity": "summary"
+          }
+        ]
+      },
+      {
+        "text": "test",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "test",
+            "entity": "description"
+          }
+        ]
+      },
+      {
+        "text": "summary example",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "summary example",
+            "entity": "summary"
+          }
+        ]
+      },
+      {
+        "text": "description example",
+        "intent": "inform",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "description example",
+            "entity": "description"
+          }
+        ]
       }
     ]
   }
