@@ -1,4 +1,5 @@
 from rasa_core.actions import Action
+from rasa_core.events import Restarted
 from rasa_core.actions.forms import (
     BooleanFormField,
     EntityFormField,
@@ -103,11 +104,7 @@ class ActionStartJenkinsBuildWithParams(FormAction):
 #               param = "Environment"
 		pvalue = str(tracker.get_slot("environment")).upper()
 		URL = "http://localhost:8080/job/"+job+"/buildWithParameters?token=remote_enable_token&Environment="+pvalue
-		if pvalue == "UAT" or pvalue == "INT" or pvalue == "DEV":
-			dispatcher.utter_message("Access : You have the required access for this job" )
-		if pvalue == "PROD":
-			dispatcher.utter_message("Access : You do not have the required access for this job, please contact Release Management Team" )
-			return[]
+		dispatcher.utter_message("URL :" + URL)
 		try:
 			resp, content = httplib2.Http().request(URL)
 			if resp.status==201:
@@ -182,10 +179,12 @@ class ActionGetJIRACreate(FormAction):
 		}
 		URL = "https://parimalpatel123.atlassian.net/rest/api/2/issue/"
 		#dispatcher.utter_message("URL :" + URL)
+		disp = "https://parimalpatel123.atlassian.net/projects/TS/queues/custom/8/"
 		try:
 			resp=requests.post(URL,json=samplejson,auth=(username,password))
 			a=resp.json()
-			dispatcher.utter_message("New Issue is created with ID : "+a['key'])	
+			dispatcher.utter_message("New Issue is created with ID : "+a['key'])
+			dispatcher.utter_message("You can find the details at : "+disp+a['key'])
 		except:
 			dispatcher.utter_message(resp.text)
 			#dispatcher.utter_message(resp.status_code)
@@ -213,34 +212,11 @@ class ActionSearchRestaurants(FormAction):
 		    tracker.get_slot("people"))
 	    return [SlotSet("search_results", results)]
 
-class ActionRequestAccess(Action):
-	def name(self):
-		# you can then use action_example in your stories
-		return "action_request_access"
 
-	def run(self, dispatcher, tracker, domain):
-		# what your action should do
-		job=str(tracker.get_slot('access'))
-		#job = str(tracker.get_slot('jenkinsjob'))
-		try:
-			if job == "ucd":
-				response = 'Sailpoint request has been raised on your behalf, You will be notified in the email once it is approved'
-				dispatcher.utter_message(response)
-			elif job == "github":
-				response = 'Validation completed...You are authorized for access'
-				dispatcher.utter_message(response)
-				response1 = 'Access has been granted, please validate URL : http://github.mycomp.com/'
-				dispatcher.utter_message(response1)
-			elif job == "svn":
-				response = 'Validation completed...You are authorized for access'
-				dispatcher.utter_message(response)
-				response1 = 'Please contact your Manager.'
-				dispatcher.utter_message(response1)
-			elif job == "servicedesk":
-				response = 'Access has been granted, please validate URL : http://myservicedesk.mycomp.com/'
-				dispatcher.utter_message(response)
-			else:
-				dispatcher.utter_message('Access is not automated through DevOps bot for tool:'+ str(job))
-		except:
-			dispatcher.utter_message('Sorry! an exception occured')
-		return []
+
+class ActionRestarted(Restarted):
+        def name(self):
+                return "action_chat_restart"
+
+        def run(self, dispatcher, tracker, domain):
+                return [Restarted()]
